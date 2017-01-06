@@ -11,16 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var registration_service_1 = require('./registration.service');
 var router_1 = require('@angular/router');
+var student_1 = require('./student');
 var RegistrationComponent = (function () {
     function RegistrationComponent(registrationService, router) {
         this.registrationService = registrationService;
         this.router = router;
+        this.student = new student_1.Student();
     }
-    RegistrationComponent.prototype.ngOnInit = function () {
+    RegistrationComponent.prototype.submitRegistration = function () {
+        alasql('INSERT INTO student SELECT * FROM ?', [[this.student]]);
+        alasql('SELECT * FROM student');
+        this.router.navigate(['/']);
     };
     RegistrationComponent = __decorate([
         core_1.Component({
-            selector: 'sign-up',
             templateUrl: 'app/registration/registration.component.html'
         }), 
         __metadata('design:paramtypes', [registration_service_1.RegistrationService, router_1.Router])
