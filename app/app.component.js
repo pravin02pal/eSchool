@@ -8,18 +8,41 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
     }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            templateUrl: 'app/app.component.html'
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
+    AppComponent.prototype.ngOnInit = function () {
+        alasql("CREATE TABLE student (id number AUTOINCREMENT, name string, email string, dob string, city string)");
+        alasql('INSERT INTO student SELECT * FROM ?', [[
+                {
+                    "name": "Madrid",
+                    "email": "madrid@yopmail.com",
+                    "dob": "01/02/2016",
+                    "city": "indore"
+                },
+                {
+                    "name": "Hari",
+                    "email": "hari@yopmail.com",
+                    "dob": "11/05/2016",
+                    "city": "pithampur"
+                },
+                {
+                    "name": "Jhon",
+                    "email": "jhon@yopmail.com",
+                    "dob": "25/27/2016",
+                    "city": "dhar"
+                }
+            ]]);
+    };
     return AppComponent;
 }());
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'my-app',
+        templateUrl: 'app/app.component.html'
+    }),
+    __metadata("design:paramtypes", [])
+], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

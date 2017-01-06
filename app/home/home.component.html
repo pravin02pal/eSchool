@@ -1,3 +1,4 @@
+<button type="button" routerLink="signup" class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> Add Student</button>
 <section class="content-part"><!--content-part begin -->
   <div class="content has-header padding main-container container">
     <div class="row content-row" >
@@ -8,6 +9,7 @@
             <th>Email</th>
             <th>Date Of birth</th>
             <th>City</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -16,6 +18,7 @@
             <td>{{ student.email }}</td>
             <td>{{ student.dob }}</td>
             <td>{{ student.city }}</td>
+            <td></td>
           </tr>
         </tbody>
       </table>

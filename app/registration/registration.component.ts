@@ -15,7 +15,5 @@ export class RegistrationComponent implements OnInit {
 
   submitRegistration() {
     alasql('INSERT INTO student SELECT * FROM ?',[[this.student]]);
-    alasql('SELECT * FROM student');
-    this.router.navigate(['/']);
   }
 }

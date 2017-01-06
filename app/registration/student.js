@@ -1,6 +1,7 @@
 "use strict";
 var Student = (function () {
-    function Student(name, email, dob, city) {
+    function Student(id, name, email, dob, city) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.dob = dob;
